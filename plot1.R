@@ -26,7 +26,7 @@ names(data) <- table_headers
 
 ## Using the following *nix command it was made sure that there were
 ## no fields with '?'(NA) on these two days
-## cat household_power_consumption.txt | grep "^[1|2]/2/2007" | grep "?"
+## grep "^[1|2]/2/2007" household_power_consumption.txt | grep "?"
 
 png("plot1.png")
 with(data, hist(Global_active_power, col = "red"
