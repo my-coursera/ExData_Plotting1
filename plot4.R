@@ -24,8 +24,9 @@ table_headers <- names(read.table(DATA_SET, sep = ";", header = TRUE, nrows = 1)
 data <- read.table(DATA_SET, sep = ";", skip = 66637, nrows = 2880)
 names(data) <- table_headers
 
-## For the purpose of doing this project, it was made sure via other means
-## that there were no fields with '?'(NA) on these two days
+## Using the following *nix command it was made sure that there were
+## no fields with '?'(NA) on these two days
+## cat household_power_consumption.txt | grep "^[1|2]/2/2007" | grep "?"
 
 ## New column for date and time
 data$dt <- as.POSIXlt(paste(data$Date, data$Time), format = "%d/%m/%Y %R")
